@@ -1,0 +1,5 @@
+fragment GetAllVideo on Query {
+  videos {
+    ...VideoDetail
+  }
+}

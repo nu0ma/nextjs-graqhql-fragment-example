@@ -1,0 +1,10 @@
+fragment VideoDetail on Video {
+  id
+  title
+  tags {
+    id
+    name
+    createdAt
+  }
+  createdAt
+}

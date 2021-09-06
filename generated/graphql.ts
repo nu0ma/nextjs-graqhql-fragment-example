@@ -78,7 +78,7 @@ export type Video = {
 
 export type VideoDetailFragment = { __typename?: 'Video', id: number, title: string, createdAt: any, tags?: Maybe<Array<{ __typename?: 'Tag', id: number, name: string, createdAt: any }>> };
 
-export type GetAllVideoFragment = { __typename?: 'Query', videos: Array<{ __typename?: 'Video', id: number, title: string, createdAt: any, tags?: Maybe<Array<{ __typename?: 'Tag', id: number, name: string, createdAt: any }>> }> };
+export type AllVideosFragment = { __typename?: 'Query', videos: Array<{ __typename?: 'Video', id: number, title: string, createdAt: any, tags?: Maybe<Array<{ __typename?: 'Tag', id: number, name: string, createdAt: any }>> }> };
 
 export type VideosQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -97,8 +97,8 @@ export const VideoDetailFragmentDoc = gql`
   createdAt
 }
     `;
-export const GetAllVideoFragmentDoc = gql`
-    fragment GetAllVideo on Query {
+export const AllVideosFragmentDoc = gql`
+    fragment AllVideos on Query {
   videos {
     ...VideoDetail
   }
@@ -106,9 +106,9 @@ export const GetAllVideoFragmentDoc = gql`
     ${VideoDetailFragmentDoc}`;
 export const VideosDocument = gql`
     query Videos {
-  ...GetAllVideo
+  ...AllVideos
 }
-    ${GetAllVideoFragmentDoc}`;
+    ${AllVideosFragmentDoc}`;
 
 /**
  * __useVideosQuery__

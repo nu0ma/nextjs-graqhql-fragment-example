@@ -1,3 +1,3 @@
 query Videos {
-  ...GetAllVideo
+  ...AllVideos
 }
